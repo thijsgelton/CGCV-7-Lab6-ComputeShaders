@@ -494,10 +494,10 @@ RectTransform:
   m_Father: {fileID: 121350165}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 256, y: 256}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1528281660
 MonoBehaviour:
@@ -513,15 +513,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   computeShader: {fileID: 7200000, guid: 2964af97187b1fb4bb0792d2dbfe6d2b, type: 3}
   renderTexture: {fileID: 8400000, guid: 95dd9570c0e2e0d43897aa530984bb93, type: 2}
-  texture: {fileID: 2800000, guid: bc2e63b57aa4cdd4c839bbe4a2026c97, type: 3}
-  left: -1.5
-  right: 2
-  width: 256
+  texture: {fileID: 2800000, guid: dbcd5b1cd4ac4044aaa94e9a39dee789, type: 3}
+  left: -2.5
+  right: 1
+  top: 1
+  bottom: -1
   iterations: 100
   bailout: 2
-  height: 256
-  bottom: -1
-  top: 1
 --- !u!114 &1528281661
 MonoBehaviour:
   m_ObjectHideFlags: 0
