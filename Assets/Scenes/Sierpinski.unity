@@ -497,7 +497,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1528281660
 MonoBehaviour:
@@ -513,15 +513,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   computeShader: {fileID: 7200000, guid: e9beb550cba2d3e4bbe60e3dff190b6c, type: 3}
   renderTexture: {fileID: 8400000, guid: 5d29efc7300362c40bb4162636056a2c, type: 2}
-  texture: {fileID: 8400000, guid: 5d29efc7300362c40bb4162636056a2c, type: 2}
-  left: -2.5
-  right: 1
-  width: 256
-  iterations: 100
-  bailout: 2
-  height: 256
-  bottom: -1
-  top: 1
 --- !u!114 &1528281661
 MonoBehaviour:
   m_ObjectHideFlags: 0
