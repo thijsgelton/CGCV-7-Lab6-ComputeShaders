@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
+using UnityEngine;
 
 public class Exercise2 : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class Exercise2 : MonoBehaviour
     [SerializeField] private int iterations, bailout;
 
     // declare variables
-    private int width, height;
+    private int width, height, kernelIndex;
     private RectTransform rt;
     private float zoomfactor;
     
@@ -25,7 +25,7 @@ public class Exercise2 : MonoBehaviour
         renderTexture.enableRandomWrite = true;
         renderTexture.Create();
 
-        var kernelIndex = computeShader.FindKernel("CSMain");
+        kernelIndex = computeShader.FindKernel("CSMain");
 
         // Set shader variables (ints and floats)
         computeShader.SetFloat("_Left", left);
@@ -58,6 +58,7 @@ public class Exercise2 : MonoBehaviour
             right = right - Math.Abs(right-left) * zoomfactor;
             top = top - Math.Abs(top-bottom) * zoomfactor;
             bottom = bottom + Math.Abs(top-bottom) * zoomfactor;
+            computeShader.Dispatch(kernelIndex, renderTexture.width / 8, renderTexture.height / 8, 1);
         }
         // zoom out with right click
         if (Input.GetMouseButtonDown(1))
@@ -73,7 +74,6 @@ public class Exercise2 : MonoBehaviour
         }
         // Update shader variables and recompute shader
         setShaderVariables();
-        var kernelIndex = computeShader.FindKernel("CSMain");
         computeShader.Dispatch(kernelIndex, renderTexture.width / 8, renderTexture.height / 8, 1);
     }
 
